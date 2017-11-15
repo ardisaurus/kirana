@@ -14,7 +14,8 @@ class Beranda extends CI_Controller {
 	{
 		if ($this->session->userdata('level')==0) {
 			$data['title']='Beranda';               
-	        $data['page']='admin/v_beranda';
+	        $data['page']='admin/v_beranda';       
+	        $data['datakuisioner']=$this->m_kuisioner->getkuisioner();	        
 			$this->load->view('admin/v_dashboard', $data);
 		}else{
 			$data['title']='Beranda';               

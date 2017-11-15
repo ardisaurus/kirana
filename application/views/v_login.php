@@ -23,12 +23,12 @@
       <div class="card-header">Masuk</div>
       <div class="card-body">
         <?php if ($this->session->flashdata('message')) { ?>
-          <div class="alert alert-danger"><i class="glyphicon glyphicon-exclamation-sign"></i>
+          <div class="alert alert-danger">
             <?php echo $this->session->flashdata('message');?>                  
           </div>
         <?php }?>
         <?php if ($this->session->flashdata('notif')) { ?>
-          <div class="alert alert-info"><i class="glyphicon glyphicon-exclamation-sign"></i>
+          <div class="alert alert-info">
             <?php echo $this->session->flashdata('notif');?>                  
           </div>
         <?php }?>
