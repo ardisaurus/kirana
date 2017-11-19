@@ -151,8 +151,7 @@
 		    </div>
 		<!-- Modal --> 
         <?php 
-        $this->db->select('level');		
-		$this->db->where('level', 0);
+        $this->db->select('email');		
 		$hasilquery=$this->db->get('user');		
         if ($hasilquery->num_rows() > 1): ?>      
         <div class="col-xl-12 col-sm-12 mb-3">

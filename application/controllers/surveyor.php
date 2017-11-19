@@ -12,14 +12,10 @@ class Surveyor extends CI_Controller {
 
 	public function index()
 	{
-		if ($this->session->userdata('level')==0) {
-			$data['title']='Surveyor';               
-	        $data['page']='admin/v_surveyor';
-	        $data['datasurveyor']=$this->m_surveyor->getsurveyor();
-			$this->load->view('admin/v_dashboard', $data);
-		}else{
-			redirect('beranda');
-		}
+		$data['title']='Surveyor';               
+	    $data['page']='admin/v_surveyor';
+        $data['datasurveyor']=$this->m_surveyor->getsurveyor();
+        $this->load->view('admin/v_dashboard', $data);
 	}
 
 	public function tambah()
@@ -40,7 +36,6 @@ class Surveyor extends CI_Controller {
             $data['nama']=$this->input->post('nama'); 
             $data['email']=$this->input->post('email'); 
             $data['password']=md5($this->input->post('password'));
-            $data['level']=0; 
             $this->session->set_flashdata('message',"Peserta berhasil ditambahkan.");
             $this->m_surveyor->tambah($data);
             redirect("surveyor"); 

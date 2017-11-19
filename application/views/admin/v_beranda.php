@@ -1,6 +1,18 @@
 <div class="container-fluid">
     <div class="row">
 	    <div class="col-12">
+    		<?php if ($this->session->flashdata('warning')) { ?>
+	    	<div class="alert alert-warning">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <i class="fa fa-exclamation-triangle"></i> <?php echo $this->session->flashdata('warning');?>                  
+            </div>
+            <?php } ?>
+            <?php if ($this->session->flashdata('success')) { ?>
+	    	<div class="alert alert-success">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <i class="fa fa-check"></i> <?php echo $this->session->flashdata('success');?>                  
+            </div>
+            <?php } ?>
           <h1>Beranda</h1>
           <hr>
           <a class="btn btn-success btn-flat pull-right" href="#" data-toggle="modal" data-target="#Modaltambah">
@@ -17,7 +29,7 @@
 		            </button>
 		          </div>
 		          <div class="modal-body">
-                  <form class="form-horizontal" role="form"  action="" method="post">
+                  <form class="form-horizontal" role="form"  action="<?php echo site_url('beranda/prosestambah');?>" method="post">
 		          <div class="form-group">
 		            <label for="nama">Nama Kuisioner</label>
 		            <input class="form-control" id="namakuisioner" type="text" aria-describedby="namakuisioner" name="namakuisioner" placeholder="Masukan Nama Kuisioner Baru">
@@ -33,6 +45,7 @@
 		    </div>
 		<!-- Modal -->
           <br><br>
+          <?php if ($datakuisioner) { ?>
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
@@ -44,7 +57,6 @@
               </thead>
               <tbody>
                 	<?php 
-                	if ($datakuisioner) {
                 		$x=0;
                 		foreach ($datakuisioner as $kuisioner) {
                 		$x++;
@@ -57,7 +69,7 @@
 		                <td class="bg-info text-white">Buka</td>
 		                <?php } ?>
 		                <td align="center">
-		                	<a class="mr-3 d-inline-block" href="#">
+		                	<a class="mr-3 d-inline-block" href="<?php echo site_url('beranda/kuisioner/'.$kuisioner->id_kuisioner);?>">
 			                	<i class="fa fa-fw fa-comment"></i></a>
 			                <?php if ($kuisioner->status==0) {?>
 		                 	<a class="mr-3 d-inline-block" href="#" data-toggle="modal" data-target="#Modalbuka<?php echo $x; ?>">
@@ -83,7 +95,8 @@
 					            </button>
 					          </div>
 					          <div class="modal-body">
-			                  <form class="form-horizontal" role="form"  action="" method="post">
+			                  <form class="form-horizontal" role="form"  action="<?php echo site_url('beranda/prosesubah');?>" method="post">
+					            <input class="form-control" id="id_kuisioner" type="hidden" aria-describedby="id_kuisioner" name="id_kuisioner" value="<?php echo $kuisioner->id_kuisioner; ?>">
 					          <div class="form-group">
 					            <label for="nama">Nama Kuisioner</label>
 					            <input class="form-control" id="namakuisioner" type="text" aria-describedby="namakuisioner" name="namakuisioner" value="<?php echo $kuisioner->nama_kuisioner; ?>">
@@ -109,8 +122,8 @@
 					            </button>
 					          </div>
 					          <div class="modal-body">
-			                  <form class="form-horizontal" role="form"  action="" method="post">
-					            <input class="form-control" id="namakuisioner" type="hidden" aria-describedby="namakuisioner" name="namakuisioner" value="<?php echo $kuisioner->id_kuisioner; ?>">
+			                  <form class="form-horizontal" role="form"  action="<?php echo site_url('beranda/prosesbuka');?>" method="post">
+					            <input class="form-control" id="id_kuisioner" type="hidden" aria-describedby="id_kuisioner" name="id_kuisioner" value="<?php echo $kuisioner->id_kuisioner; ?>">
 					            Buka kuisioner <?php echo $kuisioner->nama_kuisioner; ?>?
 					      	  </div>
 					          <div class="modal-footer">
@@ -133,8 +146,8 @@
 					            </button>
 					          </div>
 					          <div class="modal-body">
-			                  <form class="form-horizontal" role="form"  action="" method="post">
-					            <input class="form-control" id="namakuisioner" type="hidden" aria-describedby="namakuisioner" name="namakuisioner" value="<?php echo $kuisioner->id_kuisioner; ?>">
+			                  <form class="form-horizontal" role="form"  action="<?php echo site_url('beranda/prosestutup');?>" method="post">
+					            <input class="form-control" id="id_kuisioner" type="hidden" aria-describedby="id_kuisioner" name="id_kuisioner" value="<?php echo $kuisioner->id_kuisioner; ?>">
 					            Tutup kuisioner <?php echo $kuisioner->nama_kuisioner; ?>?
 					      	  </div>
 					          <div class="modal-footer">
@@ -146,7 +159,7 @@
 					      </div>
 					    </div>
 					<!-- Modal -->					
-			        <!-- Tutup Modal-->
+			        <!-- Hapus Modal-->
 					    <div class="modal fade" id="Modalhapus<?php echo $x; ?>" tabindex="-1" role="dialog" aria-labelledby="Modalhapus<?php echo $x; ?>Label" aria-hidden="true">
 					      <div class="modal-dialog" role="document">
 					        <div class="modal-content">
@@ -157,8 +170,8 @@
 					            </button>
 					          </div>
 					          <div class="modal-body">
-			                  <form class="form-horizontal" role="form"  action="" method="post">
-					            <input class="form-control" id="namakuisioner" type="hidden" aria-describedby="namakuisioner" name="namakuisioner" value="<?php echo $kuisioner->id_kuisioner; ?>">
+			                  <form class="form-horizontal" role="form"  action="<?php echo site_url('beranda/proseshapus');?>" method="post">
+					            <input class="form-control" id="id_kuisioner" type="hidden" aria-describedby="id_kuisioner" name="id_kuisioner" value="<?php echo $kuisioner->id_kuisioner; ?>">
 					            Hapus kuisioner <?php echo $kuisioner->nama_kuisioner; ?>?
 					      	  </div>
 					          <div class="modal-footer">
@@ -172,8 +185,12 @@
 					<!-- Modal -->
                 	<?php		
                 		}
-                	}
+                	}else{
                 	 ?> 
+                	 <div class="alert alert-warning">
+		                <i class="fa fa-exclamation-triangle"></i> Kosong                  
+		            </div>
+                	<?php } ?>
               </tbody>
             </table>
           </div>

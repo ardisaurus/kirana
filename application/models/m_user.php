@@ -11,12 +11,6 @@ class M_user extends CI_Model{
     function goPageUser()
 	{			
 		$email=$this->session->userdata('email');
-		$this->db->where('email',$email);
-        $this->db->select('level');
-		$query=$this->db->get('user');
-		$row = $query->row();
-		$level=$row->level;		
-        $this->session->set_userdata('level',$level);
 		redirect('beranda/');
 	}
 

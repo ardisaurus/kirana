@@ -5,7 +5,6 @@ class M_Surveyor extends CI_Model{
 	{		
         $this->db->select('nama');
         $this->db->select('email');
-		$this->db->where('level', 0);
 		$hasilquery=$this->db->get('user');
 		if ($hasilquery->num_rows() > 0) {
 			foreach ($hasilquery->result() as $value) {

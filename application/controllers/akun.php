@@ -13,15 +13,9 @@ class Akun extends CI_Controller {
 	public function index()
 	{		
         $data['userdetail']=$this->m_user->getuser($this->session->userdata('email'));
-		if ($this->session->userdata('level')==0) {
-			$data['title']='Akun';               
-	        $data['page']='admin/v_akun';
-			$this->load->view('admin/v_dashboard', $data);
-		}else{
-			$data['title']='Akun';               
-	        $data['page']='member/v_akun';
-			$this->load->view('member/v_dashboard', $data);
-		}		
+		$data['title']='Akun';               
+	    $data['page']='admin/v_akun';
+		$this->load->view('admin/v_dashboard', $data);	
 	}
 
 	function ubahNama(){        
@@ -104,8 +98,7 @@ class Akun extends CI_Controller {
 
 	public function logout()
 	{
-		$this->session->unset_userdata('email');        
-        $this->session->unset_userdata('level');
+		$this->session->unset_userdata('email'); 
         redirect('login');
 	}
 }

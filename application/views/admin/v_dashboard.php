@@ -22,7 +22,7 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+    <a class="navbar-brand" href="<?php echo site_url('welcome');?>">Start Bootstrap</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -33,20 +33,11 @@
             <i class="fa fa-fw fa-home"></i>
             <span class="nav-link-text">Beranda</span>
           </a>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-          <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents2" data-parent="#exampleAccordion">
+        </li><li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="#">
             <i class="fa fa-fw fa-users"></i>
             <span class="nav-link-text">Responden</span>
           </a>
-          <ul class="sidenav-second-level collapse" id="collapseComponents2">
-            <li>              
-              <a href="#"><i class="fa fa-fw fa-user"></i>Peserta</a>
-            </li>
-            <li>              
-              <a href="#"><i class="fa fa-fw fa-th-large"></i>Kelompok</a>
-            </li>
-          </ul>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
           <a class="nav-link" href="<?php echo site_url('surveyor');?>">
