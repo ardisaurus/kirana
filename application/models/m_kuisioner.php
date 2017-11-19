@@ -60,6 +60,57 @@ class M_Kuisioner extends CI_Model{
 		}
 	}
 
+	function getresponden($id_kuisioner)
+	{		
+        $this->db->select('id_kuisioner');
+        $this->db->select('id_res');
+        $this->db->select('no_id');
+        $this->db->select('nama');
+		$this->db->where('id_kuisioner', $id_kuisioner);
+		$hasilquery=$this->db->get('responden');
+		if ($hasilquery->num_rows() > 0) {
+			foreach ($hasilquery->result() as $value) {
+				$data[]=$value;
+			}
+			return $data;
+		}
+	}
+
+	function getrespondenbyid($id_res)
+	{		
+        $this->db->select('id_kuisioner');
+        $this->db->select('id_res');
+        $this->db->select('no_id');
+        $this->db->select('nama');
+		$this->db->where('id_res', $id_res);
+		$hasilquery=$this->db->get('responden');
+		if ($hasilquery->num_rows() > 0) {
+			foreach ($hasilquery->result() as $value) {
+				$data[]=$value;
+			}
+			return $data;
+		}
+	}
+
+	function getjawabanresponden($id_kuisioner, $id_res)
+	{		
+        $this->db->select('jawaban.id_kuisioner');
+        $this->db->select('id_res');
+        $this->db->select('jawaban.id_pertanyaan');
+        $this->db->select('pertanyaan');
+        $this->db->select('jawaban');
+		$this->db->join('pertanyaan', 'jawaban.id_pertanyaan = pertanyaan.id_pertanyaan');
+		$this->db->where('jawaban.id_kuisioner', $id_kuisioner);
+		$this->db->where('id_res', $id_res);
+		$hasilquery=$this->db->get('jawaban');
+		if ($hasilquery->num_rows() > 0) {
+			foreach ($hasilquery->result() as $value) {
+				$data[]=$value;
+			}
+			return $data;
+		}
+	}
+
 	function getpertanyaanbyid($id_pertanyaan)
 	{		
         $this->db->select('id_kuisioner');

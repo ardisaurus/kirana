@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="<?php echo base_url('assets/img/favicon.ico'); ?>">
 
-    <title>Selamat Datang - KIRANA</title>
+    <title>Tentang - KIRANA</title>
 
     <!-- Bootstrap core CSS-->
     <link href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css'); ?>" rel="stylesheet">
@@ -41,30 +41,18 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1 class="display-3 text-white">Selamat Datang</h1>
-        <p class="text-white">KIRANA (KuIsioneR sederhANA) adalah sistem kuisioner berbasis web yang mengutamakan kemudahan pada sisi pengunaan.</p>
+        <h1 class="display-3 text-white">Tentang</h1>
+        <p></p>
       </div>
     </div>
     <br>
     <div class="container">
-      <!-- Example row of columns -->
-      <div class="row" align="center">
-        <div class="col-lg-6">
-          <img class="rounded-circle" src="<?php echo base_url('assets/img/surveyor.jpg'); ?>" alt="Generic placeholder image" width="140" height="140">
-          <h2>Surveyor</h2>
-          <p><a class="btn btn-success" href="<?php echo site_url('beranda');?>" role="button">Masuk &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-        <div class="col-lg-6">
-          <img class="rounded-circle" src="<?php echo base_url('assets/img/responden.jpg'); ?>" alt="Generic placeholder image" width="140" height="140">
-          <h2>Responden</h2>
-          <p><a class="btn btn-primary" href="<?php echo site_url('kuisioner');?>" role="button">Mulai &raquo;</a></p>
-        </div><!-- /.col-lg-4 -->
-      </div><!-- /.row -->
+      <p align="center">Universitas Negeri Malang</p>
     </div> <!-- /container -->
 
     <footer class="footer">
       <div class="container">
-        <span class="text-muted"><a href="<?php echo site_url('tentang');?>">Copyright</a> © Universitas Negeri Malang 2017</span>
+        <span class="small text-muted">Build by ardisaurus</span>
       </div>
     </footer>
 

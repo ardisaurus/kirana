@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title><?php echo $title; ?> - Kuisioner Kirana</title>
+  <title><?php echo $title; ?> - KIRANA</title>
   <link rel="shortcut icon" href="<?php echo base_url('assets/img/favicon.ico'); ?>">
   <!-- Bootstrap core CSS-->
   <link href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css'); ?>" rel="stylesheet">
@@ -23,7 +23,7 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container">
-      <a class="navbar-brand" href="<?php echo site_url('welcome');?>">Navbar</a>
+      <a class="navbar-brand" href="<?php echo site_url('welcome');?>">KIRANA</a>
     </div>
     </nav>    
 
@@ -34,7 +34,7 @@
 
     <footer class="footer">
       <div class="container">
-        <span class="text-muted">Copyright © Your Website 2017</span>
+        <span class="text-muted"><a href="<?php echo site_url('tentang');?>">Copyright</a> © Universitas Negeri Malang 2017</span>
       </div>
     </footer>
     <!-- Bootstrap core JavaScript-->

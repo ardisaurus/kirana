@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title><?php echo $title; ?> - Kuisioner Kirana</title>
+  <title><?php echo $title; ?> - KIRANA</title>
   <link rel="shortcut icon" href="<?php echo base_url('assets/img/favicon.ico'); ?>">
   <!-- Bootstrap core CSS-->
   <link href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css'); ?>" rel="stylesheet">
@@ -22,7 +22,7 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="<?php echo site_url('welcome');?>">Start Bootstrap</a>
+    <a class="navbar-brand" href="<?php echo site_url('welcome');?>">KIRANA</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -34,7 +34,7 @@
             <span class="nav-link-text">Beranda</span>
           </a>
         </li><li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="#">
+          <a class="nav-link" href="<?php echo site_url('responden');?>">
             <i class="fa fa-fw fa-users"></i>
             <span class="nav-link-text">Responden</span>
           </a>
@@ -88,7 +88,7 @@
     <footer class="sticky-footer">
       <div class="container">
         <div class="text-center">
-          <small>Copyright © Your Website 2017</small>
+          <small><a href="<?php echo site_url('tentang');?>">Copyright</a> © Universitas Negeri Malang 2017</small>
         </div>
       </div>
     </footer>

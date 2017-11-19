@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Masuk - Kirana</title>
+  <title>Masuk - KIRANA</title>
   <link rel="shortcut icon" href="<?php echo base_url('assets/img/favicon.ico'); ?>">
   <!-- Bootstrap core CSS-->
   <link href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css'); ?>" rel="stylesheet">
@@ -20,7 +20,7 @@
 <body class="bg-dark">
   <div class="container">
     <div class="card card-login mx-auto mt-5">
-      <div class="card-header">Masuk</div>
+      <div class="card-header">Masuk - KIRANA</div>
       <div class="card-body">
         <?php if ($this->session->flashdata('message')) { ?>
           <div class="alert alert-danger">
