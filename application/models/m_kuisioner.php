@@ -138,6 +138,15 @@ class M_Kuisioner extends CI_Model{
 
 	function hapuskuisioner($id_kuisioner){
 		$this->db->where('id_kuisioner', $id_kuisioner);
+		$this->db->delete('jawaban');
+
+		$this->db->where('id_kuisioner', $id_kuisioner);
+		$this->db->delete('responden');
+
+		$this->db->where('id_kuisioner', $id_kuisioner);
+		$this->db->delete('pertanyaan');
+
+		$this->db->where('id_kuisioner', $id_kuisioner);
 		$this->db->delete('kuisioner');
 	}
 
@@ -152,6 +161,9 @@ class M_Kuisioner extends CI_Model{
 	}
 
 	function hapuspertanyaan($id_pertanyaan){
+		$this->db->where('id_pertanyaan', $id_pertanyaan);
+		$this->db->delete('jawaban');
+
 		$this->db->where('id_pertanyaan', $id_pertanyaan);
 		$this->db->delete('pertanyaan');
 	}

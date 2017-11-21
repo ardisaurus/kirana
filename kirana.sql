@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 19, 2017 at 12:37 PM
+-- Generation Time: Nov 21, 2017 at 03:25 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -38,14 +38,25 @@ CREATE TABLE IF NOT EXISTS `jawaban` (
 --
 
 INSERT INTO `jawaban` (`id_kuisioner`, `id_pertanyaan`, `id_res`, `jawaban`) VALUES
-(4, 2, 2, 3),
-(4, 1, 2, 4),
-(4, 3, 2, 2),
-(4, 2, 3, 4),
-(4, 1, 3, 2),
-(4, 2, 4, 1),
-(4, 1, 4, 3),
-(4, 3, 4, 1);
+(5, 8, 5, 4),
+(5, 7, 5, 3),
+(5, 6, 5, 3),
+(5, 9, 5, 1),
+(5, 8, 6, 1),
+(5, 7, 6, 2),
+(5, 6, 6, 3),
+(5, 9, 6, 3),
+(5, 8, 7, 3),
+(5, 7, 7, 4),
+(5, 6, 7, 2),
+(5, 9, 7, 3),
+(5, 8, 8, 2),
+(5, 7, 8, 3),
+(5, 6, 8, 2),
+(5, 9, 8, 4),
+(5, 8, 9, 1),
+(5, 7, 9, 3),
+(5, 6, 9, 3);
 
 -- --------------------------------------------------------
 
@@ -58,14 +69,15 @@ CREATE TABLE IF NOT EXISTS `kuisioner` (
   `nama_kuisioner` varchar(100) NOT NULL,
   `status` tinyint(1) NOT NULL,
   PRIMARY KEY (`id_kuisioner`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `kuisioner`
 --
 
 INSERT INTO `kuisioner` (`id_kuisioner`, `nama_kuisioner`, `status`) VALUES
-(4, 'Fasilitas Laboratorium Kimia', 1);
+(5, 'Perpustakaan Baru', 1),
+(6, 'Renovasi lapangan basket', 0);
 
 -- --------------------------------------------------------
 
@@ -78,18 +90,20 @@ CREATE TABLE IF NOT EXISTS `pertanyaan` (
   `id_pertanyaan` int(11) NOT NULL AUTO_INCREMENT,
   `pertanyaan` text NOT NULL,
   PRIMARY KEY (`id_pertanyaan`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `pertanyaan`
 --
 
 INSERT INTO `pertanyaan` (`id_kuisioner`, `id_pertanyaan`, `pertanyaan`) VALUES
-(4, 1, 'Luas ruangan'),
-(4, 2, 'Kebersihan ruangan'),
-(4, 3, 'Pencahayaan ruangan'),
-(4, 4, 'Kondisi alat praktek'),
-(4, 5, 'Warna ruangan');
+(5, 6, 'Tambahkan meja baca Individu?'),
+(5, 7, 'Tambahkan komputer?'),
+(5, 8, 'Tambahkan jaringan internet?'),
+(5, 9, 'Tambahkan meja baca kelompok?'),
+(6, 10, 'Tambah lampu penerangan?'),
+(6, 11, 'Tambah bangku pemain cadangan?'),
+(6, 12, 'Tambahkan kanopi di pinggir lapangan?');
 
 -- --------------------------------------------------------
 
@@ -103,16 +117,18 @@ CREATE TABLE IF NOT EXISTS `responden` (
   `no_id` varchar(100) NOT NULL,
   `nama` varchar(50) NOT NULL,
   PRIMARY KEY (`id_res`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
 
 --
 -- Dumping data for table `responden`
 --
 
 INSERT INTO `responden` (`id_res`, `id_kuisioner`, `no_id`, `nama`) VALUES
-(2, 4, '88182873776', 'Nugroho'),
-(3, 4, '000297737', 'Charlie'),
-(4, 4, '777377', 'Svenn');
+(5, 5, '88182873776', 'Charlie'),
+(6, 5, '88182873755', 'Silvia'),
+(7, 5, '88182873723', 'David'),
+(8, 5, '88182873799', 'Richard'),
+(9, 5, '88182873734', 'Bella');
 
 -- --------------------------------------------------------
 
@@ -132,8 +148,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`email`, `password`, `nama`) VALUES
-('ichijo@raku.com', '0192023a7bbd73250516f069df18b500', 'Ichijo Raku'),
-('onodera@kosaki.com', '0192023a7bbd73250516f069df18b500', 'Kosaki Onodera');
+('admin@kirana.com', '25d55ad283aa400af464c76d713c07ad', 'admin');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -64,7 +64,7 @@
 
     <footer class="footer">
       <div class="container">
-        <span class="text-muted"><a href="<?php echo site_url('tentang');?>">Copyright</a> © Universitas Negeri Malang 2017</span>
+        <span class="text-muted"><a href="<?php echo base_url('tentang');?>">Copyright</a> © Universitas Negeri Malang 2017</span>
       </div>
     </footer>
 

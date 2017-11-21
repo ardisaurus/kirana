@@ -16,11 +16,11 @@ class Login extends CI_Controller {
 	}
 
 	function proses(){
-        $this->form_validation->set_rules('email','Email / NIM','required|trim');
+        $this->form_validation->set_rules('email','Email','required|trim');
         $this->form_validation->set_rules('password','password','required|trim');
         
         if($this->form_validation->run()==false){
-            $this->session->set_flashdata('message','Email / NIM dan password harus diisi.');
+            $this->session->set_flashdata('message','Email dan password harus diisi.');
             redirect('login/index');
         }else{
             $email=$this->input->post('email');

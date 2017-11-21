@@ -34,8 +34,8 @@
         <?php }?>
         <form action="<?php echo site_url('login/proses');?>" method="post">
           <div class="form-group">
-            <label for="exampleInputEmail1">Email atau NIM</label>
-            <input class="form-control" id="exampleInputEmail1" type="email" name="email" placeholder="Email / NIM">
+            <label for="exampleInputEmail1">Email</label>
+            <input class="form-control" id="exampleInputEmail1" type="email" name="email" placeholder="Email">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Kata Sandi</label>
